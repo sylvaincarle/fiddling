@@ -1,0 +1,48 @@
+<html>
+<head><title>Empty Array in Javascript?</title></head>
+<body>
+  
+<p>If the array is not empty, it's values will be written here.</p>
+
+<script type="text/javascript">  
+
+/* 
+2012/02/27 @ 14h30 /by @froginthevalley
+http://github.com/sylvaincarle
+
+small script to check if an array is empty without using .length
+first part is setting up an array for our use case, to comment out as required. 
+second part looks at the first postion in the index and checks if it is either undefined or null outputs the result to console.log
+
+embedded in an html file for easier bundling as an email attachment ;-)
+*/
+
+var i;
+var myArray = new Array();
+
+/*
+myArray[0] = "Zero";
+myArray[1] = "One";
+*/
+
+/* loop to test array content and output it to the document */
+for (i=0;i<myArray.length;i++) {
+  document.write(myArray[i] + "<br/>");
+  }
+
+/* testing for the value of the first item in myArray */
+if (typeof myArray[0] !== 'undefined' && myArray[0] !== null) {
+  console.log("Not undefined or null");
+  }  
+
+else {
+  console.log("Indeed, undefined or null");
+  }
+
+</script>
+
+<p>Also check out your javascript console for more info.</p>
+
+</body>
+</html>
+
