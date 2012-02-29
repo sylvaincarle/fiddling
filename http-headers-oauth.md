@@ -22,7 +22,19 @@ This howto is written with web developers in mind. It is not for programmers int
 
 Quoting from "HTTP Made Really Easy" :
 
-> Like most network protocols, HTTP uses the client-server model: An HTTP client opens a connection and sends a request message to an HTTP server; the server then returns a response message, usually containing the resource that was requested. After delivering the response, the server closes the connection (making HTTP a stateless protocol, i.e. not maintaining any connection information between transactions).
+> Like most network protocols, HTTP uses the client-server model: An HTTP **client** opens a **connection** and sends a **request** message to an HTTP **server**; the **server** then returns a **response** message, usually containing the **resource** that was requested. After delivering the **response**, the server closes the **connection** _(making HTTP a stateless protocol, i.e. not maintaining any connection information between transactions)._
+
+Let's recap this with a simple schema, the initial **request** then the **response**:
+
+    [client] --(connection)----> (request) ----> [server]
+
+    [server] ----> (response) --(ressource)----> [client]
+
+The last important bit of information is that the format of the **request** and **response** message are the same. You have the main content of the message, also know as the **body** preceded by **headers**. These **headers** could be seen as the information someone would write on an enveloppe when sending a letter via the good old postal system. **Headers** are meta-information, information about the information in the **body** and also special instructions or _questions_ passed from the **client** to the **server** and vice-versa.
+
+Let's look at a simple example:
+
+
 
 
 ### Understanding what is happening, some tools to help you
