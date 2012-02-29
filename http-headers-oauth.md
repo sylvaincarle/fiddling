@@ -50,6 +50,11 @@ There is also a useful (if dated) list at [http://www.cs.tut.fi/~jkorpela/http.h
 
 It gives a pretty good idea of the usefulness of the different headers available. They are used to define what type of content can be accepted (_Accept: text/plain, text/html_), the language (English, French, etc) and a bunch of information about the specific browser requesting the information, where the **request** comes from (**referer**, note the historical mispelling still in use today) and other meta information, such as the length of the content, the compression method, the modification date (**If-Modified-Since**)... There can be many, many **headers** sent before the **body**.
 
+### A simple example to follow along
+
+* Using Firebug
+
+* Details ToDo
 
 ### Understanding what is happening, some tools to help you
 
