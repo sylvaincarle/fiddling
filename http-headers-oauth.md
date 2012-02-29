@@ -60,6 +60,7 @@ It gives a pretty good idea of the usefulness of the different headers available
 * HTTP Response Browser - https://chrome.google.com/webstore/detail/mgekankhbggjkjpcbhacjgflbacnpljm
 * Ressource page from the W3C (list several options) - http://www.w3.org/International/questions/qa-headers-charset
 * Using CURL - http://curl.haxx.se/docs/httpscripting.html
+* Charles, web debugging proxy application - http://www.charlesproxy.com/
 
 ### What is OAuth, how does it work with HTTP headers?
 
