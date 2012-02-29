@@ -52,7 +52,7 @@ It gives a pretty good idea of the usefulness of the different headers available
 
 ### A simple example to follow along
 
-* Using Firebug
+* Using Firebug or Chrome Dev Tools?
 
 * Details ToDo
 
