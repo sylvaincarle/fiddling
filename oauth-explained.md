@@ -36,15 +36,16 @@ The last actor is the *authorization server**, the maestro of the OAuth symphony
 
 Let's recap this with a simple schema to understand all the actors involved in a **user-agent flow** (more on **flows** later)
 
-    [**client**] --(requests)----> (access to ressource) ----> [**authorization server**]
 
-    [**authorization server] ----> (prompts) --> [**ressource owner**] ----> (accept/deny)
+[**client**] --(requests)----> (access to ressource) ----> [**authorization server**]
 
-    [**authorization server] ----> (emits **tokens**) --> [**client**] ----> (access to ressources granted)
+[**authorization server**] ----> (prompts) --> [**ressource owner**] ----> (accept/deny)
 
-    [**client**] -- (requests on behalf of **owner*, with tokens) ----> (ressource) ----> [**ressource server**]
+[**authorization server**] ----> (emits **tokens**) --> [**client**] ----> (access to ressources granted)
 
-    [**ressource server**] -- (validates tokens) -- (grants access to ressource) ----> [**client**]
+[**client**] -- (requests on behalf of **owner*, with tokens) ----> (ressource) ----> [**ressource server**]
+
+[**ressource server**] -- (validates tokens) -- (grants access to ressource) ----> [**client**]
 
 It's not _that simple_ but I hope you get the gist of it!
 
