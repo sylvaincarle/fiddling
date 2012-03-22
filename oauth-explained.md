@@ -7,7 +7,8 @@ OAuth 1.0 (and later 2.0) was created to give a standard way to access data as a
 ## Notes
 
 * OAuth 2.0 is not backward compatible with OAuth 1.0, it's a new protocol.
-* It has the same concepts but some key differences (mostly around cryptographic **signatures** requirements).
+* Most OAuth 2.0 services requires SSL connections.
+* It has the same concepts but some key differences (mostly around cryptographic **signatures** requirements that are optional in 2.0).
 * If you are serious about OAuth I recommend that you buy a copy of * [Getting started with OAuth 2.0 book by Ryan Boyd] (http://shop.oreilly.com/product/0636920021810.do). It describes in greater details all the concepts we summarize here (and more). This primer is partly based on this book and other web ressources (see the _reference_ section at the end of this document).
 
 ## Terminology
@@ -30,7 +31,7 @@ The **ressource server** is the actor hosting the data or actions that requires 
 
 The **ressource owner** is the user of an application or a service, the actor that needs to give permission before the third party service can get access.
 
-The application making the request to access a user **ressources** is called the **client**. This **client** will act on the user's behalf once the user has **delegated authorization**.
+The application making the request to access a user **ressources** is called the **client**. This **client** will act on the user's behalf once the user has **delegated authorization**. The **client** is also sometimes called the _consumer_ in some services ()
 
 The last actor is the *authorization server**, the maestro of the OAuth symphony, managing the *authorization* from the user (ressource owner), issuing **access tokens** to the *client* application so that it can request data or act on behalf of the user from the **ressource server**.
 
@@ -43,19 +44,34 @@ Let's recap this with a simple schema to understand all the actors involved in a
 
 [**authorization server**] ----> (emits **tokens**) --> [**client**] ----> (access to ressources granted)
 
-[**client**] -- (requests on behalf of **owner*, with tokens) ----> (ressource) ----> [**ressource server**]
+[**client**] -- (requests on behalf of **owner**, with **tokens**) ----> (ressource) ----> [**ressource server**]
 
 [**ressource server**] -- (validates tokens) -- (grants access to ressource) ----> [**client**]
 
 It's not _that simple_ but I hope you get the gist of it!
 
+## Registration
+
+OAuth requires a registration with the **authorization server** prior to sending requests from a **client**. For most APIs and services, this has to be done via a web form for developers, usually in conjonction with requesting an API key and giving a little bit of information about your intended use of the service. Once registered, you will get your **client** credentials to **authenticate** all the requests sent to the **authorization server**.
 
 ## Flows
+
+### Web Server (or Server Side) Flow (Ruby, Python, PHP, etc.)
+
+### Client Side (or User Agent) Flow (Usually with Javascript)
+
+### Mobile Flow
+
+### Desktop Flow
+
+### Limited Device Flow
 
 ## Concepts not covered in this primer
 
 * **Federated Authentication**
-
+* Username and Password Flow
+* Client Credential Flow
+* Assertion Flow
 
 ## References
 
