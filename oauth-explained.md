@@ -20,18 +20,40 @@ OAuth define **flows*, typical use cases (or patterns) of **authentication** and
 
 **Authorization** is usually done after **authentication**. Once a user is **authenticated** the service can apply rules that would give access (or not) to specific data or features.
 
-**Delegated Authorization** is the main reason _why_ OAuth was created. At it's core is the "passing" of your **authorization** to another service, without requiring your password. This **delegated autorization** is often to access your data or pose an action on your behalf, for exemple sending a message on Twitter from a website where you are commenting to your Twitter timeline. Often on services where many applications use **delegated authorization** you can find a trace of the service that did an action on your behalf, the "via" information under a tweet is a good exemple.
+**Delegated Authorization** is the main reason _why_ OAuth was created. At it's core is the _passing_ of your **authorization** to another service, without requiring your password. This **delegated autorization** is often to access your data or pose an action on your behalf, for exemple sending a message on Twitter from a website where you are commenting to your Twitter timeline. Often on services where many applications use **delegated authorization** you can find a trace of the service that did an action on your behalf, the "via" information under a tweet is a good exemple.
 
 ## Roles
 
 Since OAuth is used to define the actions of multiple parties in a specific **flow**, you need to understand what are the actors and what **roles** they can play.
 
+The **ressource server** is the actor hosting the data or actions that requires OAuth to access. Think of it as the _source_ of the information that will be passed to the requesting service.
+
+The **ressource owner** is the user of an application or a service, the actor that needs to give permission before the third party service can get access.
+
+The application making the request to access a user **ressources** is called the **client**. This **client** will act on the user's behalf once the user has **delegated authorization**.
+
+The last actor is the *authorization server**, the maestro of the OAuth symphony, managing the *authorization* from the user (ressource owner), issuing **access tokens** to the *client* application so that it can request data or act on behalf of the user from the **ressource server**.
+
+Let's recap this with a simple schema to understand all the actors involved in a **user-agent flow** (more on **flows** later)
+
+    [**client**] --(requests)----> (access to ressource) ----> [**authorization server**]
+
+    [**authorization server] ----> (prompts) --> [**ressource owner**] ----> (accept/deny)
+
+    [**authorization server] ----> (emits **tokens**) --> [**client**] ----> (access to ressources granted)
+
+    [**client**] -- (requests on behalf of **owner*, with tokens) ----> (ressource) ----> [**ressource server**]
+
+    [**ressource server**] -- (validates tokens) -- (grants access to ressource) ----> [**client**]
+
+It's not _that simple_ but I hope you get the gist of it!
 
 
+## Flows
 
 ## Concepts not covered in this primer
 
-* Federated Aythentication
+* **Federated Authentication**
 
 
 ## References
